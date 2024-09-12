@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Website</title>
+</head>
+<body>
+    <h1 th:text="${name}"></h1>
+    <img th:src="${imageSrc}" alt="Image">
+    
+    <div>
+        <ul>
+            <li th:each="ability : ${abilities}" th:text="${ability}"></li>
+        </ul>
+    </div>
+    <p>
+        Flag{1939089028-dflndl-20290}
+    </p>
+</body>
+</html>
