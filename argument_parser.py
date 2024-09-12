@@ -5,7 +5,7 @@ class arguments:
         self.args = self.parseArgs()
 
     def getArgs(self):
-        return (self.args.ip, self.args.port, self.args.verbose, self.args.flag)
+        return (self.args.ip, self.args.port, self.args.verbose, self.args.flag, self.args.wordlist)
     
     def parseArgs(self):
         parser = argparse.ArgumentParser(description='Process an IP address')
@@ -14,6 +14,7 @@ class arguments:
         parser.add_argument('-p', '--port', help='Port number', required=False)
         parser.add_argument('-v', '--verbose', help='Increase output verbosity', required=False, action='store_true')
         parser.add_argument('-fg', '--flag', help='Flag Prefix', required=False) 
+        parser.add_argument('-w', '--wordlist', help='Wordlist file', required=False)
         
         
         return parser.parse_args()
