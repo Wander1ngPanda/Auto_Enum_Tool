@@ -1,13 +1,14 @@
-import argparse, subprocess
+import subprocess
 from argument_parser import arguments as args
 
 ip, port, verbose, flag = args().getArgs()
 
-print("IP: ", ip)
 
 if port:
     ip = ip + ":" + port
 
 if port == "80":
-    subprocess.run(['curl', ip, '-s'], stdout=open('output.txt', 'w'))
+    procedure = subprocess.Popen(['echo', ip], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    output, error = procedure.communicate()
+    print(output)
 
