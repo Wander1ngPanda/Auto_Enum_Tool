@@ -1,4 +1,4 @@
-import argparse, subprocess, os, sys
+import argparse, subprocess
 
 
 parser = argparse.ArgumentParser(description='Process an IP address')
@@ -17,5 +17,5 @@ if port:
     ip = ip + ":" + port
 
 if port == "80":
-    subprocess.run(['curl', ip, '-s'], shell=True)
+    subprocess.run(['curl', ip, '-s'], stdout=open('output.txt', 'w'))
 
