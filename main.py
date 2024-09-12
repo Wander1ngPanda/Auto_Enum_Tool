@@ -1,17 +1,9 @@
 import argparse, subprocess
+from argument_parser import arguments as args
 
+ip, port, verbose, flag = args().getArgs()
 
-parser = argparse.ArgumentParser(description='Process an IP address')
-parser.add_argument('-ip', help='IP address', type=str, required=True)
-parser.add_argument('-p', '--port', help='Port number', required=False)
-parser.add_argument('-v', '--verbose', help='Increase output verbosity', required=False, action='store_true')
-parser.add_argument('-fg', '--flag', help='Flag Prefix', required=False) 
-args = parser.parse_args()
-
-ip = args.ip
-port = args.port
-verbose = args.verbose
-flag = args.flag
+print("IP: ", ip)
 
 if port:
     ip = ip + ":" + port
